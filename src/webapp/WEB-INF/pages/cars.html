@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
+    <style>
+        td, th {
+            outline: 2px solid black;
+            margin: 10px;
+            text-align: center
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <th:block th:each="car : ${cars}">
-            <h1 th:text="${car}"></h1>
-        </th:block>
-    </div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Car model</th>
+                <th>Car color</th>
+                <th>Number of seats</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car: ${cars}">
+            <td>
+                <span th:text="${car.getModel()}">Car name</span>
+            </td>
+            <td>
+                <span th:text="${car.getColor()}">Car color</span>
+            </td>
+            <td>
+                <span th:text="${car.getSeats()}">Car seats</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

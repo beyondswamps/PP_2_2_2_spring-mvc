@@ -9,14 +9,17 @@ import java.util.List;
 @Service
 public class CarServiceImp implements CarService {
     public List<Car> cars = new ArrayList<>();
-
-    public List<Car> listCars(Integer count) {
-        for (int i = 0; i < count; i++) {
+    Integer quantity = 5;
+    public CarServiceImp() {
+        for (int i = 0; i < quantity; i++) {
             cars.add(new Car(
-                    "CarName#" + i,
+                    "CarModel#" + i,
                     "CarColor#" + i,
                     (int) (Math.random() * 8) + 1));
         }
+    }
+
+    public List<Car> getCarsList() {
         return cars;
     }
 }

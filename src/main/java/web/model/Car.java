@@ -1,25 +1,25 @@
 package web.model;
 
 public class Car {
-    private String name;
+    private String model;
     private String color;
     private Integer seats;
 
     public Car() {
     }
 
-    public Car(String name, String color, Integer seats) {
-        this.name = name;
+    public Car(String model, String color, Integer seats) {
+        this.model = model;
         this.color = color;
         this.seats = seats;
     }
 
-    public String getName() {
-        return name;
+    public String getModel() {
+        return model;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getColor() {
@@ -41,7 +41,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "name='" + name + '\'' +
+                "model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", seats=" + seats +
                 '}';

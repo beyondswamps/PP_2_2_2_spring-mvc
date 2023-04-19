@@ -13,12 +13,12 @@ public class CarController {
 
     private final CarService carService;
     @Autowired
-    CarController(CarService carService) {
+    public CarController(CarService carService) {
         this.carService = carService;
     }
     @GetMapping(value = "/cars")
     public String printCars(ModelMap model, @RequestParam(defaultValue = "5") Integer count) {
-        model.addAttribute("cars", carService.getCarsList().stream().limit(count).toList());
+        model.addAttribute("cars", carService.getCarsList(count));
         return "cars";
     }
 }

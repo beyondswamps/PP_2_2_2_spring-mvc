@@ -15,7 +15,6 @@ public class CarServiceImp implements CarService {
     }
 
     public List<Car> getCarsList(Integer count) {
-        if (count == null) return carDao.getCarsList();
         if (count > 0 && count < 5) return carDao.getCarsList(count);
         return carDao.getCarsList();
     }
